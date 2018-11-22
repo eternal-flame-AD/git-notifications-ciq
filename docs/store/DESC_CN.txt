@@ -1,0 +1,54 @@
+您的GitHub通知一目了然！
+
+在GitHub上查看完整版本说明(https://github.com/eternal-flame-AD/git-notifications-ciq/blob/master/README.md)
+
+用法
+
+0.在手表上安装此Connect IQ（R）应用程序。
+1.在[这里](https://github.com/settings/tokens)生成一个新的Personal Access Token。 （OAuth支持正在开发中）
+2.将Access Token复制到应用程序设置中。
+3.享受吧！
+
+特性
+
+0.通知计数
+
+1.缩写通知类型，源代码库和标题
+
+2.将所有内容标记为已读
+
+3.在手机上打开通知
+
+已知限制
+
+0.由于Connect IQ SDK的响应体大小限制，只能正确接收大约3-4个通知。如果API响应正文大小超出限制，则会出现“++”和错误消息，指示从GitHub API收到的通知太多。我的解决方案是为GitHub方面构建一个API网关，从API响应中删除不必要的字段，我想我们至少可以收到20个通知。这将在未来实施，网关功能将仅在用户在应用程序设置中明确同意时使用。此外，网关的源代码也将被公开，我将为用户提供一种在自己的服务器和域名上搭建自己的网关的方法，这样就不必担心Access Token的安全性。
+
+TODO
+
+0.添加OAuth支持
+
+1.添加If-Modified-After支持
+
+2.（可能）添加GitLab支持
+
+## 免责声明
+
+- 此Connect IQ（R）应用程序是由[eternal-flame-AD](https://github.com/eternal-flame-AD)开发和开源的个人项目。该应用程序既不隶属于GitHub，也不由Github提供官方支持。该应用程序仅向GitHub, Inc. 公布的Github API发送请求.GitHub徽标的使用仅用于指示GitHub通知计数。
+
+## 贡献
+
+### 错误报告和功能请求
+
+请在[Github问题](https://github.com/eternal-flame-AD/git-notifications-ciq/issues)上报告错误和功能请求。通过Connect IQ（R）Store进行联系无法保证响应。
+
+### 代码贡献
+
+直接在[GitHub](https://github.com/eternal-flame-AD/git-notifications-ciq/pulls)上发送PR。
+
+### 设备支持
+
+我在我的Forerunner 630和我朋友的Fenix 3上开发和测试我的应用程序。其他型号也许也可以工作，所以如果我没有将你的型号包含在构建目标中，可以克隆repo并尝试将应用程序旁加载到你的表里。如果可以使用，只需在GitHub新建PR或问题通知我，我会将您的设备添加到构建目标并向Connect IQ（R）商店发布新版本。如果存在一些布局问题，请尝试修复它而不破坏现有支持并新建PR，我会在测试已有支持后合并布局更新。
+
+## 开源协议
+
+- 该项目在Apache License 2.0下在GitHub上发布和开源。您应该收到许可证的副本以及源代码。如果没有，请[在此处](https://github.com/eternal-flame-AD/git-notifications-ciq/blob/master/LICENSE)获取。
