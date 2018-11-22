@@ -34,6 +34,20 @@
 
 - This Connect IQ(R) App is a personal project developed and open-sourced by [eternal-flame-AD](https://github.com/eternal-flame-AD). The application is neither affiliated to nor endorsed by GitHub, Inc. The application only sends requests to the already Github API publicized by GitHub, Inc. The use of the GitHub logo is only for the indication of GitHub notification count.
 
+## Contributing
+
+### Bug report and feature requests
+
+Please report bugs and feature requests on [Github Issues](https://github.com/eternal-flame-AD/git-notifications-ciq/issues). Contacting through Connect IQ(R) Store is not guaranteed a response.
+
+### Code contributions
+
+Open up a PR on [GitHub](https://github.com/eternal-flame-AD/git-notifications-ciq/pulls) directly.
+
+### Device support
+
+I develop and test my application on my Forerunner 630 and my friend's Fenix 3. Other models might work as well, so if I didn't include your model into the build target, feel free to clone the repo and try sideloading the app onto your watch. If it works, just open a PR or issue to notify me and I will add your device to the build targets and issue a new version to the Connect IQ(R) Store. If there are some layout problems, try to fix it without breaking existing support and open a PR to have your layout update merged.
+
 ## LICENSE 
 
 - This project is released and open-sourced on GitHub under the Apache License 2.0. You should receive a copy of the license together with the source code. If not, get it [here](https://github.com/eternal-flame-AD/git-notifications-ciq/blob/master/LICENSE).
