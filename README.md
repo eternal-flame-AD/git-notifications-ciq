@@ -51,3 +51,5 @@ I develop and test my application on my Forerunner 630 and my friend's Fenix 3. 
 ## LICENSE 
 
 - This project is released and open-sourced on GitHub under the Apache License 2.0. You should receive a copy of the license together with the source code. If not, get it [here](https://github.com/eternal-flame-AD/git-notifications-ciq/blob/master/LICENSE).
+
+![Connect IQ(R)](https://github.com/eternal-flame-AD/git-notifications-ciq/blob/master/docs/img/connect-iq-logo-white.png?raw=true)
