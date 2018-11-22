@@ -11,5 +11,5 @@
     <string id="ErrRateLimitExceeded">Rate Limit Exceeded</string>
     <string id="ErrMarkAllAsRead">Failed</string>
     <string id="ProgMarkAll">Communicating...</string>
-    <string id="SuccessMarkAllAsRead">成功</string>
+    <string id="SuccessMarkAllAsRead">Success</string>
 </strings>
