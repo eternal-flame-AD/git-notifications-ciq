@@ -1,5 +1,7 @@
 # Github notifications
 
+[![Connect IQ(R)](https://github.com/eternal-flame-AD/git-notifications-ciq/blob/master/docs/img/connect-iq-logo-white.png?raw=true)](https://apps.garmin.com/en-US/apps/7debce23-b6ec-48f5-b902-9cfdeaaab5d2)
+
 ## Screenshots
 
 ### Fenix 3
@@ -59,5 +61,3 @@ I develop and test my application on my Forerunner 630 and my friend's Fenix 3. 
 ## LICENSE 
 
 - This project is released and open-sourced on GitHub under the Apache License 2.0. You should receive a copy of the license together with the source code. If not, get it [here](https://github.com/eternal-flame-AD/git-notifications-ciq/blob/master/LICENSE).
-
-![Connect IQ(R)](https://github.com/eternal-flame-AD/git-notifications-ciq/blob/master/docs/img/connect-iq-logo-white.png?raw=true)
