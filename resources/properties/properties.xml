@@ -1,0 +1,5 @@
+<properties>
+    <property id="githubAccessToken" type="string">not_entered</property>
+    <property id="notification_number_x_offset" type="number">0</property>
+    <property id="notification_number_y_offset" type="number">0</property>
+</properties>

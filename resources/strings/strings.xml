@@ -1,0 +1,15 @@
+<strings>
+    <string id="AppName">GitHub Notifications</string>
+    <string id="githubAccessToken">GitHub Access Token</string>
+    <string id="githubAccessTokenPrompt">Please enter your GitHub access token here.</string>
+    <string id="ErrUnauthorized">Invalid Token</string>
+    <string id="ErrTooManyNotifications">Too Many Notifications</string>
+    <string id="ErrTokenNotSet">Access Token Not Set</string>
+    <string id="ErrBLEError">BLE Error</string>
+    <string id="ErrBLEUnavail">BLE Not Connected</string>
+    <string id="ErrUnknown">Unknown Error</string>
+    <string id="ErrRateLimitExceeded">Rate Limit Exceeded</string>
+    <string id="ErrMarkAllAsRead">Failed</string>
+    <string id="ProgMarkAll">Communicating...</string>
+    <string id="SuccessMarkAllAsRead">成功</string>
+</strings>
