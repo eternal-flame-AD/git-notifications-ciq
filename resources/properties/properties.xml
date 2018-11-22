@@ -2,4 +2,6 @@
     <property id="githubAccessToken" type="string">not_entered</property>
     <property id="notification_number_x_offset" type="number">0</property>
     <property id="notification_number_y_offset" type="number">0</property>
+    <property id="github_client_id" type="string">c1b7852511a37947dcf9</property>
+    <property id="github_client_secret" type="string">1880a098511b396ce081574c722e3d4e6a2ede6f</property>
 </properties>

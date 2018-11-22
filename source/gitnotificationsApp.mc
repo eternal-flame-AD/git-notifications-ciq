@@ -1,14 +1,40 @@
 using Toybox.Application;
 using Toybox.System;
 using Toybox.WatchUi;
+using Toybox.Communications;
+using Toybox.Timer;
 
 class gitnotificationsApp extends Application.AppBase {
     var githubAPI;
     var mainView;
     function initialize() {
-        githubAPI = new GithubAPI(Application.getApp().getProperty("githubAccessToken"));
+        var token = Application.getApp().getProperty("githubAccessToken");
+        githubAPI = new GithubAPI(token);
+        Communications.registerForOAuthMessages(method(:receiveCode));
         AppBase.initialize();
         System.println("UTC Now is: "+ TimeHelper.formatISO(TimeHelper.nowutc()));
+    }
+    
+    function receiveToken(success, code) {
+        if (success) {
+            githubAPI.updateToken(code);
+            Application.getApp().setProperty("githubAccessToken", code);
+            mainView.stopBusy(true, WatchUi.loadResource(Rez.Strings.SuccessOauth));
+            mainView.updateNotifications();
+        } else {
+            mainView.stopBusy(false, WatchUi.loadResource(Rez.Strings.ErrOauthExchange));
+        }
+    }
+    
+    var oAuthCodeReceived = false;
+    function receiveCode(message) {
+        if (message.data != null && message.data.hasKey("code")) {
+            var code = message.data["code"];
+            System.println("Got code: " + code);
+            githubAPI.exchangeOAuthCodeForToken(code, method(:receiveToken));
+        } else {
+            mainView.stopBusy(false, WatchUi.loadResource(Rez.Strings.ErrOauthCode));
+        }
     }
 
     // onStart() is called on application start up
@@ -37,6 +63,14 @@ class gitnotificationsApp extends Application.AppBase {
         mainView.startBusy(WatchUi.loadResource(Rez.Strings.ProgMarkAll));
         githubAPI.markAllAsRead(method(:markAllAsReadReceiver));
     }
+    
+    function checkStartOauth() {
+        var token = Application.getApp().getProperty("githubAccessToken");
+        if (token.equals("not_entered") && !oAuthCodeReceived) {
+            GithubAPI.startOAuth();
+            mainView.startBusy(WatchUi.loadResource(Rez.Strings.ProgOauth));
+        }
+    }
 
     // Return the initial view of your application here
     function getInitialView() {
@@ -44,7 +78,9 @@ class gitnotificationsApp extends Application.AppBase {
         menu.readAllCB = method(:markAllAsRead);
         menu.openNotificationsCB = method(:openNotifications);
         mainView = new MainView(githubAPI);
-        return [ mainView,  menu];
+        var timer = new Timer.Timer();
+        timer.start(method(:checkStartOauth),1000,false);
+        return [ mainView,  menu ];
     }
 
 }
