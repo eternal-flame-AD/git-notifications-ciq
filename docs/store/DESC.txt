@@ -5,9 +5,8 @@ View full version description at GitHub(https://github.com/eternal-flame-AD/git-
 Usage
 
 0. Install this Connect IQ(R) App on your watch.
-1. Generate a new personal access token [here](https://github.com/settings/tokens). (OAuth support is in development)
-2. Copy your access token into the application settings.
-3. Enjoy!
+1. Open the widget and complete OAuth to GitHub on your phone, or enter an personal access token in the application settings.
+2. Enjoy!
 
 Features
 
@@ -25,7 +24,7 @@ Known Limitations
 
 TODO
 
-0. Add OAuth support
+0. <s>Add OAuth support</s>
 
 1. Add If-Modified-After support
 

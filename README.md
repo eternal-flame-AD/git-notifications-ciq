@@ -14,8 +14,7 @@
 
 
 1. Install this Connect IQ(R) App on your watch.
-1. Generate a new personal access token [here](https://github.com/settings/tokens). (OAuth support is in development)
-1. Copy your access token into the application settings.
+1. Open the widget and complete OAuth to GitHub on your phone, or enter an personal access token in the application settings.
 1. Enjoy!
 
 ## Features
@@ -34,7 +33,7 @@
 
 ## TODO
 
-- Add OAuth support
+- <s>Add OAuth support</s>
 
 - Add If-Modified-After support
 

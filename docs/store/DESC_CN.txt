@@ -5,9 +5,8 @@
 用法
 
 0.在手表上安装此Connect IQ（R）应用程序。
-1.在[这里](https://github.com/settings/tokens)生成一个新的Personal Access Token。 （OAuth支持正在开发中）
-2.将Access Token复制到应用程序设置中。
-3.享受吧！
+1.再手表上启动这个程序并在手机上完成OAuth，或者在应用程序设置里填入一个Personal Access Token。
+2.享受吧！
 
 特性
 
@@ -25,7 +24,7 @@
 
 TODO
 
-0.添加OAuth支持
+0.<s>添加OAuth支持</s>
 
 1.添加If-Modified-After支持
 
