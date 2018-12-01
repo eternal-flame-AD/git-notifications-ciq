@@ -12,8 +12,12 @@
     <string id="ErrMarkAllAsRead">Failed</string>
     <string id="ProgMarkAll">Communicating...</string>
     <string id="SuccessMarkAllAsRead">Success</string>
-    <string id="ProgOauth">Waiting for oAuth reply from phone...</string>
+    <string id="ProgOauth">Waiting for OAuth reply from phone...</string>
     <string id="SuccessOauth">Success</string>
     <string id="ErrOauthExchange">Failed to exchange for token</string>
-    <string id="ErrOauthCode">Failed to obtain oAuth code</string>
+    <string id="ErrOauthCode">Failed to obtain OAuth code</string>
+    <string id="MenuOperations">Operations</string>
+    <string id="MenuOpenOnPhone">View on your phone</string>
+    <string id="MenuMarkAllAsRead">Mark all as read</string>
+    <string id="MenuStartOAuth">Start OAuth</string>
 </strings>

@@ -1,7 +1,7 @@
 <strings>
-    <string id="AppName">Github Notifications</string>
-    <string id="githubAccessToken">Github Access Token</string>
-    <string id="githubAccessTokenPrompt">在这里输入你的Github access token.</string>
+    <string id="AppName">GitHub Notifications</string>
+    <string id="githubAccessToken">GitHub Access Token</string>
+    <string id="githubAccessTokenPrompt">在这里输入你的GitHub access token.</string>
     <string id="ErrUnauthorized">无效的Access Token</string>
     <string id="ErrTooManyNotifications">结果过多</string>
     <string id="ErrTokenNotSet">未设置Access Token</string>
@@ -12,8 +12,12 @@
     <string id="ErrMarkAllAsRead">出错</string>
     <string id="ProgMarkAll">正在通讯...</string>
     <string id="SuccessMarkAllAsRead">成功</string>
-    <string id="ProgOauth">等待手机完成oAuth...</string>
+    <string id="ProgOauth">等待手机完成OAuth...</string>
     <string id="SuccessOauth">成功</string>
     <string id="ErrOauthExchange">未能获得token</string>
     <string id="ErrOauthCode">未能获得code</string>
+    <string id="MenuOperations">操作</string>
+    <string id="MenuOpenOnPhone">在手机上查看</string>
+    <string id="MenuMarkAllAsRead">全部标为已读</string>
+    <string id="MenuStartOAuth">开始OAuth</string>
 </strings>

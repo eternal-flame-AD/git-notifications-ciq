@@ -10,10 +10,10 @@ class MenuDelegate extends WatchUi.BehaviorDelegate {
     function onMenu() {
         var menu = new WatchUi.Menu();
         var delegate;
-        menu.setTitle("Operations");
-        menu.addItem("View on your phone", :open_notifications);
-        menu.addItem("Mark all as read", :read_all);
-        menu.addItem("Start OAuth", :start_oauth);
+        menu.setTitle(WatchUi.loadResource(Rez.Strings.MenuOperations));
+        menu.addItem(WatchUi.loadResource(Rez.Strings.MenuOpenOnPhone), :open_notifications);
+        menu.addItem(WatchUi.loadResource(Rez.Strings.MenuMarkAllAsRead), :read_all);
+        menu.addItem(WatchUi.loadResource(Rez.Strings.MenuStartOAuth), :start_oauth);
         delegate = new MenuInputDelegate(openNotificationsCB, readAllCB); // a WatchUi.MenuInputDelegate
         WatchUi.pushView(menu, delegate, WatchUi.SLIDE_IMMEDIATE);
         return true;
