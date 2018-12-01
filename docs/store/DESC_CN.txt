@@ -24,11 +24,9 @@
 
 TODO
 
-0.<s>添加OAuth支持</s>
+0.添加If-Modified-After支持
 
-1.添加If-Modified-After支持
-
-2.（可能）添加GitLab支持
+1.（可能）添加GitLab支持
 
 ## 免责声明
 

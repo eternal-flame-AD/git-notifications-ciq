@@ -24,11 +24,9 @@ Known Limitations
 
 TODO
 
-0. <s>Add OAuth support</s>
+0. Add If-Modified-After support
 
-1. Add If-Modified-After support
-
-2. (Maybe) Add GitLab support
+1. (Maybe) Add GitLab support
 
 ## Disclaimer
 
