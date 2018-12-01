@@ -33,6 +33,7 @@ class gitnotificationsApp extends Application.AppBase {
             System.println("Got code: " + code);
             githubAPI.exchangeOAuthCodeForToken(code, method(:receiveToken));
         } else {
+            System.println(message.responseCode);
             mainView.stopBusy(false, WatchUi.loadResource(Rez.Strings.ErrOauthCode));
         }
     }
@@ -64,11 +65,15 @@ class gitnotificationsApp extends Application.AppBase {
         githubAPI.markAllAsRead(method(:markAllAsReadReceiver));
     }
     
+    function startOauth() {
+        GithubAPI.startOAuth();
+        mainView.startBusy(WatchUi.loadResource(Rez.Strings.ProgOauth));
+    }
+    
     function checkStartOauth() {
         var token = Application.getApp().getProperty("githubAccessToken");
         if (token.equals("not_entered") && !oAuthCodeReceived) {
-            GithubAPI.startOAuth();
-            mainView.startBusy(WatchUi.loadResource(Rez.Strings.ProgOauth));
+            startOauth();
         }
     }
 

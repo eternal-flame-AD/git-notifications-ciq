@@ -13,7 +13,7 @@ class MenuDelegate extends WatchUi.BehaviorDelegate {
         menu.setTitle("Operations");
         menu.addItem("View on your phone", :open_notifications);
         menu.addItem("Mark all as read", :read_all);
-        //menu.addItem("Clear last modified time", :clear_time);
+        menu.addItem("Start OAuth", :start_oauth);
         delegate = new MenuInputDelegate(openNotificationsCB, readAllCB); // a WatchUi.MenuInputDelegate
         WatchUi.pushView(menu, delegate, WatchUi.SLIDE_IMMEDIATE);
         return true;
@@ -40,9 +40,9 @@ class MenuInputDelegate extends WatchUi.MenuInputDelegate {
             if (readAllCB!=null) {
                 readAllCB.invoke();
             }
-        } else if (item == :clear_time) {
-            System.println("Clear last result");
-            Application.getApp().setProperty("lastGithubResult", {});
+        } else if (item == :start_oauth) {
+            System.println("Start OAuth");
+            Application.getApp().startOauth();
         }
     }
 }
