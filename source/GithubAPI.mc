@@ -1,6 +1,7 @@
 using Toybox.Application;
 using Toybox.Communications;
 using Toybox.System;
+using Toybox.Lang;
 
 const GITHUB_SAVE_FORMAT_REV=4;
 
@@ -9,6 +10,43 @@ class GithubAPI {
     
     function initialize(token) {
         headers["Authorization"] = "token "+token;
+    }
+    
+    function updateToken(token) {
+        headers["Authorization"] = "token "+token;
+    }
+    
+    static function startOAuth() {
+        Communications.makeOAuthRequest(
+            "https://github.com/login/oauth/authorize",
+            {"client_id" => Application.getApp().getProperty("github_client_id"), "scope" => "notifications"},
+            "https://eternal-flame-ad.github.io/git-notifications-ciq/oauth_landing.html",
+            Communications.OAUTH_RESULT_TYPE_URL,
+            {"code"=>"code"}
+        );
+    }
+    
+    hidden var exchangeOAuthCodeForTokenCBs = [];
+    function exchangeOAuthCodeForTokenReceiver(status_code, data) {
+        var cb = exchangeOAuthCodeForTokenCBs[0];
+        exchangeOAuthCodeForTokenCBs.remove(cb);
+        if (status_code==200) {
+            cb.invoke(true, data["access_token"]);
+        } else {
+            cb.invoke(false, status_code);
+        }
+    }
+    
+    function exchangeOAuthCodeForToken(code, cb) {
+       var url = "https://github.com/login/oauth/access_token";
+
+       var options = {
+           :method => Communications.HTTP_REQUEST_METHOD_POST,
+           :headers => {"Accept" => "application/json"},
+           :responseType => Communications.HTTP_RESPONSE_CONTENT_TYPE_JSON,
+       };
+       Communications.makeWebRequest(url, {"client_id"=>Application.getApp().getProperty("github_client_id"), "client_secret"=>Application.getApp().getProperty("github_client_secret"), "code"=>code}, options, method(:exchangeOAuthCodeForTokenReceiver));
+       exchangeOAuthCodeForTokenCBs.add(cb);
     }
     
     function openNotificationOnPhone() {
@@ -31,15 +69,13 @@ class GithubAPI {
     }
     
     function markAllAsRead(cb) {
-       var url = "https://api.github.com/notifications";                         // set the url
+       var url = "https://api.github.com/notifications";
 
-       var options = {                                             // set the options
-           :method => Communications.HTTP_REQUEST_METHOD_PUT,      // set HTTP method
+       var options = {
+           :method => Communications.HTTP_REQUEST_METHOD_PUT,
            :headers => headers,
-           //:context => cb,
        };
 
-                                                                   // onReceive() method
        Communications.makeWebRequest(url, null, options, method(:markAllAsReadReceiver));
        markAllAsReadCBs.add(cb);
     }

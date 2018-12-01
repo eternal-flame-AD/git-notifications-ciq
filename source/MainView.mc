@@ -32,14 +32,21 @@ class MainView extends WatchUi.View {
         updateNotifications();
     }
     
-    hidden var progress;
+    hidden var progress = null;
     function startBusy(msg) {
+        if (progress!=null) {
+            return;
+        }
         progress = new WatchUi.ProgressBar(msg, null);
         WatchUi.pushView(progress, null, WatchUi.SLIDE_DOWN);
     }
     
     function stopBusyNow() {
+        if (progress==null) {
+            return;
+        }
         WatchUi.popView(WatchUi.SLIDE_UP);
+        progress = null;
     }
     
     function stopBusy(success, msg) {
@@ -56,7 +63,7 @@ class MainView extends WatchUi.View {
         var i=0;
         while (i<views.size()) {
             var view = views[i];
-            if (view instanceof NotificationList) {
+            if (view instanceof NotificationList || view instanceof ErrorDisplay) {
                 views.remove(view);
             } else {
                 i++;

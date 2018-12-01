@@ -12,4 +12,8 @@
     <string id="ErrMarkAllAsRead">出错</string>
     <string id="ProgMarkAll">正在通讯...</string>
     <string id="SuccessMarkAllAsRead">成功</string>
+    <string id="ProgOauth">等待手机完成oAuth...</string>
+    <string id="SuccessOauth">成功</string>
+    <string id="ErrOauthExchange">未能获得token</string>
+    <string id="ErrOauthCode">未能获得code</string>
 </strings>

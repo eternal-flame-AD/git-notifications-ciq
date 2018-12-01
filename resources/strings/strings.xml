@@ -12,4 +12,8 @@
     <string id="ErrMarkAllAsRead">Failed</string>
     <string id="ProgMarkAll">Communicating...</string>
     <string id="SuccessMarkAllAsRead">Success</string>
+    <string id="ProgOauth">Waiting for oAuth reply from phone...</string>
+    <string id="SuccessOauth">Success</string>
+    <string id="ErrOauthExchange">Failed to exchange for token</string>
+    <string id="ErrOauthCode">Failed to obtain oAuth code</string>
 </strings>
